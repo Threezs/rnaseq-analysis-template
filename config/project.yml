@@ -1,0 +1,31 @@
+project_id: apap_24h_demo
+project_title: Mouse APAP 24h bulk RNA-seq
+species: Mus musculus
+assay: bulk RNA-seq
+input_counts: data/raw/counts.csv
+input_metadata: data/raw/sample_metadata.csv
+design_formula: "~ group"
+contrast:
+  factor: group
+  numerator: APAP
+  denominator: Control
+primary_method: edgeR_QL
+sensitivity_methods:
+  - DESeq2_Wald
+  - limma_voom
+filter:
+  method: edgeR::filterByExpr
+  min_count: 10
+  min_total_count: 15
+thresholds:
+  fdr: 0.05
+  abs_log2fc: 1
+gsea:
+  ranking: DESeq2 Wald statistic or signed -log10(p) with direction
+  database: GO Biological Process / KEGG / Hallmark / custom
+ora:
+  universe: genes retained after filterByExpr
+activity:
+  progeny: true
+  gsva_ssgsea: true
+  viper: true
