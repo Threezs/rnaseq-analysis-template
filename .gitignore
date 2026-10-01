@@ -1,0 +1,24 @@
+# R, Quarto and targets
+.Rhistory
+.RData
+.Rproj.user/
+.quarto/
+_freeze/
+_targets/
+*.html
+*.pdf
+
+# Private inputs and generated outputs
+data/raw/*
+data/processed/*
+results/*
+figures/*
+tables/*
+logs/*
+!data/mock/
+!data/mock/*
+
+# Secrets
+.env
+*.pem
+*.key
