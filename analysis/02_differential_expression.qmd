@@ -1,0 +1,20 @@
+---
+title: "02 — Differential expression"
+format:
+  html:
+    toc: true
+    code-fold: true
+execute:
+  freeze: auto
+---
+
+The default decision is to report edgeR quasi-likelihood as the primary test and use DESeq2 Wald plus limma-voom as sensitivity analyses.
+
+~~~{r}
+# Uncomment after enabling the DE targets in _targets.R
+# edger_fit <- tar_read(edger_fit)
+# de <- edgeR::glmQLFTest(edger_fit$fit, coef = 2)
+# edgeR::topTags(de)
+~~~
+
+Use a predefined contrast, report effect sizes and FDR, and retain the full result table. Significance-only tables are for display, not for reanalysis.
