@@ -1,0 +1,29 @@
+---
+title: "01 — Input and QC"
+format:
+  html:
+    toc: true
+    code-fold: true
+execute:
+  freeze: auto
+---
+
+## Input contract
+
+The count matrix must contain integer counts, one gene per row, and one sample per column. The metadata must contain a unique `sample_id` column matching count-matrix columns.
+
+~~~{r}
+library(targets)
+obj <- tar_read(input_check)
+dim(obj$counts)
+obj$metadata
+~~~
+
+## Library size
+
+~~~{r}
+library(edgeR)
+barplot(colSums(obj$counts), las = 2, ylab = "Raw library size")
+~~~
+
+For a real project, add normalized library-size plots, sample correlations, PCA/MDS, and an explicit batch review before fitting models.
