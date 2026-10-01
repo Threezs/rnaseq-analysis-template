@@ -1,0 +1,19 @@
+name: count-matrix-check
+
+on:
+  push:
+    paths:
+      - "data/mock/**"
+      - "python/**"
+      - "R/**"
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - run: python python/validate_count_matrix.py data/mock/counts.csv
