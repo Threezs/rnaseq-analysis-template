@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "RNA-seq Analysis Template"
+message: "Please cite this repository when reusing the workflow."
+type: software
+authors:
+  - family-names: Zhao
+    given-names: Zize
+repository-code: "https://github.com/Threezs/rnaseq-analysis-template"
+license: "proprietary"
+version: "0.1.0"
