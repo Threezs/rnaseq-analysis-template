@@ -1,0 +1,8 @@
+sample_id,group,batch
+C01,Control,1
+C02,Control,1
+C03,Control,2
+C04,Control,2
+A01,APAP,1
+A02,APAP,2
+A03,APAP,2
